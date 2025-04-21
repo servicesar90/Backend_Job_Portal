@@ -39,7 +39,7 @@ const EmployeeExperience = sequelize.define("EmployeeExperience", {
     allowNull: true,
   },
   skillsUsed: {
-    type: DataTypes.JSON,
+    type: DataTypes.JSON, 
     allowNull: true,
   },
 });
