@@ -36,3 +36,5 @@ const EmployeeEducation=sequelize.define('EmployeeEducation',{
     }
     
 });
+
+export default EmployeeEducation;
