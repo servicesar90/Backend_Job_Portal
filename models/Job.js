@@ -24,7 +24,7 @@ const Job= sequelize.define('Job',{
         allowNull:true
     },
     payType:{
-        type:DataTypes.ENUM('Fixed-only','Fixed+Incentive', 'incentive');
+        type:DataTypes.ENUM('Fixed-only','Fixed+Incentive', 'incentive'),
         allowNull:false
     },
     minimumSalary:{
