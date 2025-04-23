@@ -3,6 +3,15 @@ import { sequelize } from "../config/db.js";
 
 
 const Job= sequelize.define('Job',{
+    employerId:{
+        type:DataTypes.INTEGER,
+        allowNull:false,
+        reference:{
+            model:'User',
+            key:'id'
+        },
+        unique:true
+    },
     jobTitle:{
         type:DataTypes.STRING,
         allowNull:false
@@ -40,7 +49,7 @@ const Job= sequelize.define('Job',{
         allowNull:true
     },
     perks:{
-        type:DataTypes.ARRAY(DataTypes.STRING),
+        type:DataTypes.JSON,
         allowNull:true
     },
     joiningFee:{
@@ -92,7 +101,7 @@ const Job= sequelize.define('Job',{
         allowNull:false
     },
     languages:{
-        type:DataTypes.ARRAY(DataTypes.STRING),
+        type:DataTypes.JSON,
         allowNull:true
     },
     distance:{
@@ -100,7 +109,7 @@ const Job= sequelize.define('Job',{
         allowNull:false
     },
     skills:{
-        type:DataTypes.ARRAY(DataTypes.STRING),
+        type:DataTypes.JSON,
         allowNull:false
     },
     jobDescription:{

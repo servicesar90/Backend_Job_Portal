@@ -2,6 +2,7 @@ import express from "express";
 import bodyParser from 'body-parser';
 import {sequelize} from './config/db.js';
 import authRoutes from './routes/auth.js';
+import employerRoutes from './routes/employerRoutes.js';
 import dotenv from 'dotenv';
 
 dotenv.config();
@@ -12,6 +13,7 @@ app.use(bodyParser.json());
 
 
 app.use('/api/auth',authRoutes);
+app.use('/api/v1',employerRoutes)
 
 
 
