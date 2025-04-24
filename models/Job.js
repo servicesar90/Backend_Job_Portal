@@ -10,7 +10,7 @@ const Job= sequelize.define('Job',{
             model:'User',
             key:'id'
         },
-        unique:true
+        unique:false
     },
     jobTitle:{
         type:DataTypes.STRING,
