@@ -1,12 +1,12 @@
 import { DataTypes } from "sequelize";
-import sequelize from "../config/db.js";
+import {sequelize} from "../../config/db.js";
 
 const EmployeeExperience = sequelize.define("EmployeeExperience", {
   employeeId: {
     type: DataTypes.INTEGER,
     allowNull: false,
     references: {
-      model: "Employee",
+      model: "EmployeeProfiles",
       key: "id",
     },
   },
@@ -32,7 +32,7 @@ const EmployeeExperience = sequelize.define("EmployeeExperience", {
   },
   isCurrent: {
     type: DataTypes.BOOLEAN,
-    defultValue: false,
+    defaultValue: false,
   },
   currentSalary: {
     type: DataTypes.FLOAT,

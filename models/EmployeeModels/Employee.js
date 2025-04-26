@@ -1,5 +1,5 @@
 import { DataTypes } from "sequelize";
-import sequelize from "../config/db.js";
+import {sequelize} from "../../config/db.js";
 
 const EmployeeProfile = sequelize.define("EmployeeProfile", {
   userId: {
@@ -7,7 +7,7 @@ const EmployeeProfile = sequelize.define("EmployeeProfile", {
     allowNull: false,
     unique: true,
     references: {
-      model: "User",
+      model: "Users",
       key: "id",
     },
   },
@@ -17,7 +17,7 @@ const EmployeeProfile = sequelize.define("EmployeeProfile", {
   },
   dob: {
     type: DataTypes.DATEONLY,
-    allownULL: false,
+    allowNull: false,
   },
   gender: {
     type: DataTypes.STRING,

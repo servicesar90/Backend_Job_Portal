@@ -1,5 +1,5 @@
 import {DataTypes} from "sequelize";
-import sequelize from "../config/db.js";
+import {sequelize} from "../../config/db.js";
 
 const EmployeeEducation=sequelize.define('EmployeeEducation',{
     employeeId:{
@@ -23,7 +23,7 @@ const EmployeeEducation=sequelize.define('EmployeeEducation',{
         allowNull:true
     },
     specialization:{
-        types:DataTypes.STRING,
+        type:DataTypes.STRING,
         allowNull:true
     },
     instituteName:{
