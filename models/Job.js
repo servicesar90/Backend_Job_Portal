@@ -56,6 +56,10 @@ const Job= sequelize.define('Job',{
         type:DataTypes.BOOLEAN,
         defaultValue:false
     },
+    joiningFeeAmount:{
+        type:DataTypes.FLOAT,
+        allowNull:true,
+    },
     joiningFeeReason:{
         type:DataTypes.ENUM('inventory-charge', 'security-deposit', 'registration-fee', 'commission', 'IRDA-exam', 'other-reason'),
         allowNull:true
@@ -64,10 +68,7 @@ const Job= sequelize.define('Job',{
         type:DataTypes.STRING,
         allowNull:true
     },
-    joiningFeeReasonDetail:{
-        type:DataTypes.STRING,
-        allowNull:true
-    },
+    
     joiningFeeAmountTime:{
         type:DataTypes.ENUM('before-interview','after-interview','deducted-from-salary'),
         allowNull:true
@@ -116,7 +117,7 @@ const Job= sequelize.define('Job',{
         type:DataTypes.TEXT,
         allowNull:false
     },
-    walkin:{
+    walkIn:{
         type:DataTypes.BOOLEAN,
         defaultValue:false
     },
@@ -128,7 +129,15 @@ const Job= sequelize.define('Job',{
         type:DataTypes.DATEONLY,
         allowNull:true
     },
-    walkinInstruction:{
+    WalkInEndDate:{
+        type:DataTypes.DATEONLY,
+        allowNull:true,
+    },
+    walkInStartTime:{
+        type:DataTypes.STRING,
+        allowNull:true,
+    },
+    walkInInstruction:{
         type:DataTypes.STRING,
         allowNull:true
     },

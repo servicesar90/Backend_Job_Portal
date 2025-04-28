@@ -1,5 +1,5 @@
 import { DataTypes } from "sequelize";
-import {sequelize} from "../../config/db.js";
+import { sequelize } from "../../config/db.js";
 
 const EmployeeExperience = sequelize.define("EmployeeExperience", {
   employeeId: {
@@ -14,6 +14,14 @@ const EmployeeExperience = sequelize.define("EmployeeExperience", {
     type: DataTypes.STRING,
     allowNull: false,
   },
+  industry: {
+    type: DataTypes.STRING,
+    allowNull: true,
+  },
+  employmentType: {
+    type: DataTypes.STRING,
+    allowNull: true,
+  },
   jobTitle: {
     type: DataTypes.STRING,
     allowNull: false,
@@ -22,12 +30,20 @@ const EmployeeExperience = sequelize.define("EmployeeExperience", {
     type: DataTypes.STRING,
     allowNull: false,
   },
+  description: {
+    type: DataTypes.TEXT,
+    allowNull: true,
+  },
   startDate: {
     type: DataTypes.DATEONLY,
     allowNull: true,
   },
   endDate: {
     type: DataTypes.DATEONLY,
+    allowNull: true,
+  },
+  noticePeriod: {
+    type: DataTypes.STRING,
     allowNull: true,
   },
   isCurrent: {
@@ -39,7 +55,7 @@ const EmployeeExperience = sequelize.define("EmployeeExperience", {
     allowNull: true,
   },
   skillsUsed: {
-    type: DataTypes.JSON, 
+    type: DataTypes.JSON,
     allowNull: true,
   },
 });
