@@ -23,7 +23,7 @@ const Company=sequelize.define('company',{
     website:{
         type:DataTypes.STRING,
         allowNull:true
-    },
+    }, 
     logoUrl:{
         type:DataTypes.STRING,
         allowNull:true
